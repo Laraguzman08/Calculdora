@@ -12,11 +12,17 @@ body {
 
 }
 
-.ajuste {
-    padding: 15px;
+.botao {
+    background-color: hsl(180, 10%, 83%);
+    margin: 10px;
+    padding: 5px;
 }
 
 .flex {
     display:flex;
     justify-content: center;
+}
+
+.ajuste {
+    padding: 15px;
 }
