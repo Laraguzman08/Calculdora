@@ -1,11 +1,11 @@
-function pegarValores {
+function pegarValores() {
     // getElementById pega o input pelo id entre "", e .value pega o que foi digitado
     let valor1 = document.getElementById("valor1").value; 
     let valor2 = document.getElementById("valor2").value;
     
     // se algum campo estiver vazio return null para a função e devolve um valor vazio
     if (valor1 === "" || valor2 === "") {
-        alert("Por favor preencha os dois campos!");
+        alert("Erro! Por favor preencha os dois campos!");
         return null;
     }
 
@@ -13,7 +13,7 @@ function pegarValores {
     valor2 = parseFloat(valor2);
 
     if (isNaN(valor1) || isNaN(valor2)) {
-        alert("Digite apenas valores válidos!");
+        alert("Erro! Digite apenas valores válidos!");
         return null; // para e devolve valor vazio se for Not a Number
     }
 
@@ -27,7 +27,7 @@ function somar() {
     // se valores = null (vazio), para a função e não retorna nada
     if (valores === null) return;
 
-    let resultado = valores.valo1 + valores.valor2;
+    let resultado = valores.valor1 + valores.valor2;
     mostrarResultado(resultado);
 }
 
@@ -36,7 +36,7 @@ function subtrair() {
 
     if (valores === null) return;
 
-    let resultado = valores.valo1 - valores.valor2;
+    let resultado = valores.valor1 - valores.valor2;
     mostrarResultado(resultado);
 }
 
@@ -45,7 +45,7 @@ function multiplicar() {
 
     if (valores === null) return;
 
-    let resultado = valores.valo1 * valores.valor2;
+    let resultado = valores.valor1 * valores.valor2;
     mostrarResultado(resultado);
 }
 
@@ -55,16 +55,17 @@ function dividir() {
     if (valores === null) return;
     
     // se o segundo valor for zero
-    if (valor2 === 0) {
-        alert("Não é possível dividir por 0!");
+    if (valores.valor2 === 0) {
+        alert("Erro! Não é possível dividir por 0!");
         return;
     }
 
-    let resultado = valores.valo1 / valores.valor2;
+    let resultado = valores.valor1 / valores.valor2;
     mostrarResultado(resultado);
 }
 
-function mostrarResultado() {
+// função mostrarResultado recebe (resultado)
+function mostrarResultado(resultado) {
     // .innerText representa o texto visível do elemento
     document.getElementById("result").innerText = "O resultado da operação é: " + resultado;
 }
