@@ -64,8 +64,14 @@ function dividir() {
     mostrarResultado(resultado);
 }
 
-// função mostrarResultado recebe (resultado)
+// função mostrarResultado recebe variavel (resultado)
 function mostrarResultado(resultado) {
     // .innerText representa o texto visível do elemento
     document.getElementById("result").innerText = "O resultado da operação é: " + resultado;
+}
+
+function limpar() {
+    document.getElementById("valor1").value = "";
+    document.getElementById("valor2").value = "";
+    document.getElementById("result").innerText = "O resultado da operação é: ";
 }
