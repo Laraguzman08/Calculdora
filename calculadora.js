@@ -29,6 +29,7 @@ function somar() {
 
     let resultado = valores.valor1 + valores.valor2;
     mostrarResultado(resultado);
+    adicionarHistorico(valores.valor1 + "+" + valores.valor2 + "=" + resultado);
 }
 
 function subtrair() {
@@ -38,6 +39,7 @@ function subtrair() {
 
     let resultado = valores.valor1 - valores.valor2;
     mostrarResultado(resultado);
+    adicionarHistorico(valores.valor1 + "-" + valores.valor2 + "=" + resultado);
 }
 
 function multiplicar() {
@@ -47,6 +49,7 @@ function multiplicar() {
 
     let resultado = valores.valor1 * valores.valor2;
     mostrarResultado(resultado);
+    adicionarHistorico(valores.valor1 + "*" + valores.valor2 + "=" + resultado);
 }
 
 function dividir() {
@@ -62,9 +65,10 @@ function dividir() {
 
     let resultado = valores.valor1 / valores.valor2;
     mostrarResultado(resultado);
+    adicionarHistorico(valores.valor1 + "/" + valores.valor2 + "=" + resultado);
 }
 
-// função mostrarResultado recebe variavel (resultado)
+// função mostrarResultado recebe variavel resultado
 function mostrarResultado(resultado) {
     // .innerText representa o texto visível do elemento
     document.getElementById("result").innerText = "O resultado da operação é: " + resultado;
@@ -74,4 +78,12 @@ function limpar() {
     document.getElementById("valor1").value = "";
     document.getElementById("valor2").value = "";
     document.getElementById("result").innerText = "O resultado da operação é: ";
+}
+
+// variável conta representa a operação feita, criada dentro da função que adiciona a operação no histórico
+function adicionarHistorico(conta) {
+    let lista = document.getElementById("historico");
+
+    // .innerHTML é o conteúdo dentro do elemento; aqui pega o que já tem na lista e adiciona mais um <li>
+    lista.innerHTML += "<li>" + conta + "</li>";
 }
